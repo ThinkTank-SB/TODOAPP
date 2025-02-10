@@ -15,7 +15,7 @@ app.use(morgan('tiny'));
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: 'https://todo-again.vercel.app/auth',  // Allow only your frontend
+    origin: 'https://todo-again.vercel.app/',  // Allow only your frontend
     credentials: true
 }));
 
