@@ -6,20 +6,23 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import allRoutes from './routes/index.js';
 
+
+app.use(
+  cors({
+    origin: '*', // Allow all origins
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
+  })
+);
+
 const app = express();
 const PORT = process.env.PORT || 8000;
 
 // middleware
-app.use(cors());
+
 app.use(morgan('tiny'));
 app.use(express.json());
 app.use(cookieParser());
-
-app.all("/*" , function(req,res,next){
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With");
-  next();
-})
 
 
 app.use('/api', allRoutes);
