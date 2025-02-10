@@ -15,13 +15,13 @@ app.use(morgan('tiny'));
 app.use(express.json());
 app.use(cookieParser());
 
-// routes
-app.use(
-  cors({
-    origin: "https://todoapp-1-udud.onrender.com", // Update this to your frontend URL
-    credentials: true,
-  })
-);
+const corsOptions = {
+  origin: 'https://todo-frontend-weld-psi.vercel.app', // your Vercel frontend domain
+  credentials: true, // allow credentials (cookies, etc.)
+};
+
+app.use(cors(corsOptions));
+
 app.use('/api', allRoutes);
 
 // error handler
