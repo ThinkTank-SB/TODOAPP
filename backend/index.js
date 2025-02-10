@@ -14,8 +14,6 @@ app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json());
 app.use(cookieParser());
-
-const cors = require('cors');
 app.use(cors({
     origin: 'https://todo-again.vercel.app/auth',  // Allow only your frontend
     credentials: true
