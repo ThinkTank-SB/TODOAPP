@@ -7,6 +7,9 @@ import cors from 'cors';
 import allRoutes from './routes/index.js';
 
 
+
+
+const app = express();
 app.use(
   cors({
     origin: '*', // Allow all origins
@@ -14,8 +17,6 @@ app.use(
     allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
   })
 );
-
-const app = express();
 const PORT = process.env.PORT || 8000;
 
 // middleware
