@@ -12,7 +12,7 @@ import allRoutes from './routes/index.js';
 const app = express();
 app.use(
   cors({
-    origin: '*', // Allow all origins
+    origin: 'https://todo-again.vercel.app', // Allow all origins
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
     allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
     credentials : true
