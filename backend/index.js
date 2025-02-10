@@ -15,6 +15,7 @@ app.use(
     origin: '*', // Allow all origins
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
     allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
+    credentials : true
   })
 );
 const PORT = process.env.PORT || 8000;
