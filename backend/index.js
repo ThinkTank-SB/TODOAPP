@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 const corsOptions = {
-  origin: 'https://todo-frontend-weld-psi.vercel.app', // your Vercel frontend domain
+  origin: 'https://todo-frontend-thinktank-sb-thinktank-sbs-projects.vercel.app/', // your Vercel frontend domain
   credentials: true, // allow credentials (cookies, etc.)
 };
 
