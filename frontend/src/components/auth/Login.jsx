@@ -15,7 +15,8 @@ function Login() {
       await axios.post('/api/auth/login', {
         email,
         password,
-      });
+      },
+      { withCredentials: true });
       navigate('/');
     } catch (err) {
       console.log(err);

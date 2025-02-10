@@ -29,5 +29,6 @@
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"sass": "^1.52.3",
 		"vite": "^2.9.9"
-	}
+	},
+	"proxy": "https://todoapp-utb7.onrender.com"
 }
