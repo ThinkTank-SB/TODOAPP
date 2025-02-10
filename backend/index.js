@@ -15,12 +15,12 @@ app.use(morgan('tiny'));
 app.use(express.json());
 app.use(cookieParser());
 
-const corsOptions = {
-  origin: 'https://todo-frontend-thinktank-sb-thinktank-sbs-projects.vercel.app/', // your Vercel frontend domain
-  credentials: true, // allow credentials (cookies, etc.)
-};
+const cors = require('cors');
+app.use(cors({
+    origin: 'https://todo-again.vercel.app/auth',  // Allow only your frontend
+    credentials: true
+}));
 
-app.use(cors(corsOptions));
 
 app.use('/api', allRoutes);
 
