@@ -14,10 +14,12 @@ app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({
-    origin: 'https://todo-again.vercel.app/',  // Allow only your frontend
-    credentials: true
-}));
+
+app.all("/*" , function(req,res,next){
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With");
+  next();
+})
 
 
 app.use('/api', allRoutes);
