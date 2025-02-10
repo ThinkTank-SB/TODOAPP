@@ -16,6 +16,12 @@ app.use(express.json());
 app.use(cookieParser());
 
 // routes
+app.use(
+  cors({
+    origin: "https://todoapp-1-udud.onrender.com", // Update this to your frontend URL
+    credentials: true,
+  })
+);
 app.use('/api', allRoutes);
 
 // error handler
